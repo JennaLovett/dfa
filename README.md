@@ -1,4 +1,4 @@
-# DFA Final Project
+# Deterministic Finite Automaton Final Project
 ## Theoretical Foundations - Spring 2019
 ### Author: Jenna Lovett
 #### Language: (0 U 1)*(00 U 01)
@@ -6,7 +6,7 @@
 ![alt text](https://github.com/JennaLovett/dfa/blob/master/img/dfa.jpg "DFA Image")
 
 ### Project Purpose
-The purpose of this project was to model a DFA and use it to accept strings of the associated language. The user will provide two values in the command line, which are the file name and test string. The program will indicated whether or not the machine accepted the test string.
+The purpose of this project was to model a Deterministic Finite Automaton (DFA) and use it to accept strings of the associated language. The user will provide two values in the command line, which are the file name and test string. The program will indicated whether or not the machine accepted the test string.
 
 ### General Info
 * The main program is located in DFADriver.java. This is the execution point of the program.
