@@ -27,3 +27,12 @@
 * checkString(): checks if the string is in the language or not
 * isInLanguage(): prints to the stdout if the string is in the language
 * construct(): calls all necessary methods on a Dfa object
+
+### Program Execution
+1. Download repository
+2. Open command prompt
+3. cd into directory
+4. type "javac.exe Dfa.java DFADriver.java" into cmd
+5. type "java DFADriver test3.txt 00100"
+6. type "java DFADriver test3.txt 11010"
+Usage is java DFADriver <filename> <test string>
