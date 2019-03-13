@@ -36,4 +36,4 @@
 5. type "java DFADriver test3.txt 00100"
 6. type "java DFADriver test3.txt 11010"
 
-Usage is java DFADriver "<filename>" "<test string>"
+Usage is java DFADriver filename test string
