@@ -4,7 +4,12 @@
 #### Language: Java
 
 ![alt text](https://github.com/JennaLovett/dfa/blob/master/dfa.jpg "DFA Image")
+###Language: (0 U 1)*(00 U 01)
 
+### Project Purpose
+The purpose of this project was to model a DFA and use it to accept strings of the associated language. The user will provide two values in the command line, which are the file name and test string. The program will indicated whether or not the machine accepted the test string.
+
+### General Info
 * The main program is located in DFADriver.java. This is the execution point of the program.
 * The main program also houses the code that takes care of user input.
 * The bulk of the computation takes place in Dfa.java.
@@ -12,7 +17,6 @@
 * The main method holds a Dfa object, which will have one method called on it, construct()
 * construct() is a method in Dfa.java that holds all other necessary functions
 * All inputs are treated as strings throughout the program
-
 
 ### Details of Dfa.java methods
 * setSigma(String a): adds a to the alphabet
@@ -35,5 +39,4 @@
 4. type "javac.exe Dfa.java DFADriver.java" into cmd
 5. type "java DFADriver test3.txt 00100"
 6. type "java DFADriver test3.txt 11010"
-
-Usage is java DFADriver filename test string
+7. Usage: "java DFADriver filename teststring"
