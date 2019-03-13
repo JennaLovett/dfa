@@ -25,14 +25,15 @@ public class DFADriver {
             str = args[1];
         }
 
-        boolean isAccepted = false;     //need
+        //boolean isAccepted = false;     //need
 
-        String start = "";      //holds q0
+        /*String start = "";      //holds q0
         ArrayList<String> transition = new ArrayList<String>();     //holds transition input
         ArrayList<String> states = new ArrayList<String>();         //holds states input
         ArrayList<String> alphabet = new ArrayList<String>();       //holds alphabet (Sigma) input
-        ArrayList<String> acceptStates = new ArrayList<String>();   //holds acceptStates
+        ArrayList<String> acceptStates = new ArrayList<String>();   //holds acceptStates*/
         String regex = "[{]|[}]|,|[(]|[)]|[-]|[>]";     //stays in main method
+        Dfa dfa = new Dfa(str);
         try {
             Scanner scan = new Scanner(new File(f));        //create scanner object to read from file
             String s[] = scan.nextLine().split(regex);  //stays in main method
@@ -42,7 +43,8 @@ public class DFADriver {
                 if(s[i].equals("") || s[i].equals(" ")) {
                     continue;
                 } else {
-                    alphabet.add(s[i]);
+                    //alphabet.add(s[i]);
+                    dfa.setSigma(s[i]);
                 }
             }
             System.out.println();
@@ -53,14 +55,16 @@ public class DFADriver {
                 if(s[i].equals("") || s[i].equals(" ")) {
                     continue;
                 } else {
-                    states.add(s[i]);
+                    //states.add(s[i]);
+                    dfa.setState(s[i]);
                 }
             }
             System.out.println();
 
             /*** Getting Start State **********/
             s = scan.nextLine().split(regex);
-            start = s[0];
+            //start = s[0];
+            dfa.setStart(s[0]);
 
 
             /*** Getting Accept States *********/
@@ -69,7 +73,8 @@ public class DFADriver {
                 if(s[i].equals("") || s[i].equals(" ")) {
                     continue;
                 } else {
-                    acceptStates.add(s[i]);
+                    //acceptStates.add(s[i]);
+                    dfa.setAcceptState(s[i]);
                 }
 
             }
@@ -85,7 +90,8 @@ public class DFADriver {
                     if(s[i].equals("")) {
                         continue;
                     } else {
-                        transition.add(s[i]);
+                        //transition.add(s[i]);
+                        dfa.setTransitions(s[i]);
                     }
                 }
             }
@@ -96,7 +102,7 @@ public class DFADriver {
             f = args[0];
         }
 
-        //map states to number -- rows
+        /*//map states to number -- rows
         HashMap<String, Integer> mappedStates = new HashMap<String, Integer>();
         for(int i = 0; i < states.size(); i++) {
             mappedStates.put(states.get(i), i);
@@ -146,7 +152,12 @@ public class DFADriver {
             isAccepted = true;
         }
 
-        System.out.println("Is the string " + str + " accepted? " + isAccepted);
+        System.out.println("Is the string " + str + " accepted? " + isAccepted); */
+        dfa.mapStates();
+        dfa.mapAlphabet();
+        dfa.createTransitionMatrix();
+        dfa.createDFA();
+        dfa.checkString();
 
     }
 
