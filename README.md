@@ -2,7 +2,7 @@
 ## Theoretical Foundations - Spring 2019
 ### Author: Jenna Lovett
 
-![alt text](https://github.com/JennaLovett/dfa/dfa.jpeg "DFA Image")
+![alt text](https://github.com/JennaLovett/dfa/blob/master/dfa.jpg "DFA Image")
 
 ⋅⋅* The main program is located in DFADriver.java. This is where the execution point of the program.
 ⋅⋅* The main program also houses the code that takes care of user input.
