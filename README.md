@@ -1,7 +1,6 @@
 # DFA Final Project
 ## Theoretical Foundations - Spring 2019
 ### Author: Jenna Lovett
-Alt-H1
 
 ![alt text](https://github.com/JennaLovett/dfa/dfa.jpeg "DFA Image")
 
