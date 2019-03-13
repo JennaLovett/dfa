@@ -23,11 +23,8 @@ public class Dfa {
         transitions = new ArrayList<>();
         mappedStates = new HashMap<>();
         mappedAlphabet = new HashMap<>();
-        transitionMatrix = new String[states.size()][alphabet.size()];
-        setDefaultTransitionMatrix();
         isAccepted = false;
         this.str = str;
-
     }
 
     public void setSigma(String a) {
@@ -63,6 +60,7 @@ public class Dfa {
     }
 
     public void setDefaultTransitionMatrix() {
+        transitionMatrix = new String[states.size()][alphabet.size()];
         for(int row = 0; row < transitionMatrix.length; row++) {
             for(int col = 0; col < transitionMatrix[row].length; col++) {
                 transitionMatrix[row][col] = "empty";
@@ -71,7 +69,9 @@ public class Dfa {
     }
 
     public void createTransitionMatrix() {
-        String begin, z, end;
+        String begin = "";
+        String end = "";
+        String z = "";
         int count = 0;
         for(int row = 0; row < transitionMatrix.length; row++) {
             for(int col = 0; col < transitionMatrix[row].length; col++) {
@@ -108,10 +108,20 @@ public class Dfa {
 
     public void isInLanguage() {
         if(isAccepted) {
-            System.out.println("The string " + str + " is in the Language.");
+            System.out.println("\nThe string " + str + " is in the Language.");
         } else {
-            System.out.println("The string " + str + " is not in the Language.");
+            System.out.println("\nThe string " + str + " is not in the Language.");
         }
+    }
+
+    public void construct() {
+        mapStates();
+        mapAlphabet();
+        setDefaultTransitionMatrix();
+        createTransitionMatrix();
+        createDFA();
+        checkString();
+        isInLanguage();
     }
 
 }
