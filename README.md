@@ -3,7 +3,7 @@
 ### Author: Jenna Lovett
 #### Language: (0 U 1)*(00 U 01)
 
-![alt text](https://github.com/JennaLovett/dfa/blob/master/dfa.jpg "DFA Image")
+![alt text](https://github.com/JennaLovett/dfa/blob/master/img/dfa.jpg "DFA Image")
 
 ### Project Purpose
 The purpose of this project was to model a DFA and use it to accept strings of the associated language. The user will provide two values in the command line, which are the file name and test string. The program will indicated whether or not the machine accepted the test string.
@@ -39,3 +39,5 @@ The purpose of this project was to model a DFA and use it to accept strings of t
 5. type "java DFADriver test3.txt 00100"
 6. type "java DFADriver test3.txt 11010"
 7. Usage: "java DFADriver filename teststring"
+
+![alt text](https://github.com/JennaLovett/dfa/blob/master/img/output.jpg "Output Image")
