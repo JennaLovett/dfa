@@ -4,6 +4,7 @@
 #### Language: Java
 
 ![alt text](https://github.com/JennaLovett/dfa/blob/master/dfa.jpg "DFA Image")
+
 ###Language: (0 U 1)*(00 U 01)
 
 ### Project Purpose
