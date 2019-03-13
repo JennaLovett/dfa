@@ -8,37 +8,34 @@ import java.util.*;
  */
 public class DFADriver {
 
+
+
     public static void main(String args[]) throws IllegalArgumentException, ArrayIndexOutOfBoundsException, FileNotFoundException{
-        String f;
+        String f;   //need for file
         String str;     //string to be tested for language inclusion
-        if(args.length < 2) {
+        if(args.length < 2) {       //checks if cmd line args are given or not
             System.out.println("Please enter a file name: ");
             Scanner s = new Scanner(System.in);
             f = s.next();
             System.out.println("Please enter a string: ");
             str = s.next();
             s.close();
-        } else {
+        } else {        //if args given, save them
             f = args[0];
             str = args[1];
         }
 
-        boolean isAccepted = false;
+        boolean isAccepted = false;     //need
 
-        //check if first character in input str matches start value
-
-        String start = "";
-        ArrayList<String> transition = new ArrayList<String>();
-        ArrayList<String> states = new ArrayList<String>();
-        ArrayList<String> alphabet = new ArrayList<String>();
-        ArrayList<String> acceptStates = new ArrayList<String>();
-        int numStates;
-        int numAlphabet;
-        String regex = "[{]|[}]|,|[(]|[)]|[-]|[>]";
+        String start = "";      //holds q0
+        ArrayList<String> transition = new ArrayList<String>();     //holds transition input
+        ArrayList<String> states = new ArrayList<String>();         //holds states input
+        ArrayList<String> alphabet = new ArrayList<String>();       //holds alphabet (Sigma) input
+        ArrayList<String> acceptStates = new ArrayList<String>();   //holds acceptStates
+        String regex = "[{]|[}]|,|[(]|[)]|[-]|[>]";     //stays in main method
         try {
-            Scanner scan = new Scanner(new File(f));
-            String input = scan.nextLine();
-            String s[] = input.split(regex);
+            Scanner scan = new Scanner(new File(f));        //create scanner object to read from file
+            String s[] = scan.nextLine().split(regex);  //stays in main method
 
             /*** Getting the alphabet *********/
             for(int i = 0; i < s.length; i++) {
@@ -51,8 +48,7 @@ public class DFADriver {
             System.out.println();
 
             /*** Getting the states *********/
-            input = scan.nextLine();
-            s = input.split(regex);
+            s = scan.nextLine().split(regex);
             for(int i = 0; i < s.length; i++) {
                 if(s[i].equals("") || s[i].equals(" ")) {
                     continue;
@@ -63,14 +59,12 @@ public class DFADriver {
             System.out.println();
 
             /*** Getting Start State **********/
-            input = scan.nextLine();
-            s = input.split(regex);
+            s = scan.nextLine().split(regex);
             start = s[0];
 
 
             /*** Getting Accept States *********/
-            input = scan.nextLine();
-            s = input.split(regex);
+            s = scan.nextLine().split(regex);
             for(int i = 0; i < s.length; i++) {
                 if(s[i].equals("") || s[i].equals(" ")) {
                     continue;
@@ -86,8 +80,7 @@ public class DFADriver {
             //add edges from every triplet within transition array
             //vertex boolean isEndState and isStartState
             while(scan.hasNextLine()) {
-                input = scan.nextLine();
-                s = input.split(regex);
+                s = scan.nextLine().split(regex);
                 for(int i = 0; i < s.length; i++) {
                     if(s[i].equals("")) {
                         continue;
